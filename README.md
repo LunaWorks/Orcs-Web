@@ -1,2 +1,2 @@
-# Orcs
-Online Role-playing Character Sheets
+# Orcs-Web
+Online Role-playing Character Sheets Web-Application
