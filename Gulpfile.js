@@ -6,7 +6,8 @@ var gulp = require('gulp'),
     concat = require('gulp-concat'),
     rimraf = require('gulp-rimraf'),
     sass = require('gulp-sass'),
-    autoprefixer = require('gulp-autoprefixer');
+    autoprefixer = require('gulp-autoprefixer'),
+    flatten = require('gulp-flatten');
 
 // Modules for webserver and livereload
 var express = require('express'),
@@ -71,6 +72,7 @@ gulp.task('browserify', function() {
 // Images task
 gulp.task('images', function() {
   gulp.src('src/**/images/*')
+      .pipe(flatten())
       .pipe(gulp.dest('build/images/'));
 });
 
@@ -83,6 +85,7 @@ gulp.task('views', function() {
 
   // Any other view files from src/views
   gulp.src('src/**/views/*')
+      .pipe(flatten())
   // Will be put in the build/views folder
   .pipe(gulp.dest('build/views/'));
 });
@@ -107,11 +110,11 @@ gulp.task('watch', ['lint'], function() {
     'styles'
   ]);
 
-  gulp.watch(['src/**/views/*.html'], [
+  gulp.watch(['src/index.html', 'src/**/views/*.html'], [
     'views'
   ]);
 
-  gulp.watch('./build/**').on('change', refresh.changed);
+  gulp.watch('./build/**/*').on('change', refresh.reload);
 
 });
 
