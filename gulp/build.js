@@ -3,40 +3,31 @@
  */
 
 var gulp = require('gulp'),
+    rename = require('gulp-rename'),
     jshint = require('gulp-jshint'),
     browserify = require('gulp-browserify'),
     concat = require('gulp-concat'),
     rimraf = require('gulp-rimraf'),
     sass = require('gulp-sass'),
     autoprefixer = require('gulp-autoprefixer'),
-    flatten = require('gulp-flatten');
+    flatten = require('gulp-flatten'),
+    uglify = require('gulp-uglify'),
+    minifyCSS = require('gulp-minify-css'),
+    htmlreplace = require('gulp-html-replace');
 
 var sourceFolder =  'src',
     devFolder = 'builds/dev',
-    prodFolder = 'builds/prod';
+    prodFolder = 'builds/prod',
+    buildFolder = devFolder;
 
 // Dev task
-gulp.task('dev', ['clean', 'views', 'styles', 'images', 'lint', 'browserify'], function() { });
+gulp.task('dev', ['clean', 'views', 'styles', 'images', 'lint', 'browserify']);
+gulp.task('prod', ['clean', 'replaceForProd', 'minify', 'images', 'lint', 'uglify']);
 
-function isProduction() {
-    return process.argv.indexOf('--production') > -1;
-}
-
-/**
- * Determines the environment folder by the --production parameter.
- */
-function environmentSwitch() {
-    var folder = devFolder;
-    if (isProduction()) {
-        folder = prodFolder;
-    }
-    return folder;
-}
+gulp.task('setProd', function() {buildFolder = prodFolder;});
 
 gulp.task('clean', function() {
-    var folder = environmentSwitch();
-
-    gulp.src('./'+ folder, { read: false }) // much faster
+    return gulp.src('./'+ buildFolder, { read: false }) // much faster
         .pipe(rimraf({force: true}));
 });
 
@@ -49,51 +40,67 @@ gulp.task('lint', function() {
 
 // Styles task
 gulp.task('styles', function() {
-    var folder = environmentSwitch();
-    gulp.src(sourceFolder + '/**/styles/*.scss')
+    return gulp.src(sourceFolder + '/**/styles/*.scss')
         // The onerror handler prevents Gulp from crashing when you make a mistake in your SASS
         .pipe(sass({outputStyle: 'expanded'}).on('error', sass.logError))
         // Optionally add autoprefixer
         .pipe(autoprefixer('last 2 versions', '> 1%', 'ie 8'))
         .pipe(concat('bundle.css'))
         // These last two should look familiar now :)
-        .pipe(gulp.dest(folder + '/css/'));
+        .pipe(gulp.dest(buildFolder + '/css/'));
 });
 
 // Browserify task
 gulp.task('browserify', function() {
-    var folder = environmentSwitch();
     // Single point of entry (make sure not to src ALL your files, browserify will figure it out)
-    gulp.src([sourceFolder + '/core/scripts/main.js'])
+    return gulp.src([sourceFolder + '/core/scripts/main.js'])
         .pipe(browserify({
             insertGlobals: true,
             debug: false
         }))
         // Bundle to a single file
         .pipe(concat('bundle.js'))
-        // Output it to our build folder
-        .pipe(gulp.dest(folder + '/js'));
+        // Output it to our build buildFolder
+        .pipe(gulp.dest(buildFolder + '/js'));
 });
 
 // Images task
 gulp.task('images', function() {
-    var folder = environmentSwitch();
     gulp.src(sourceFolder + '/**/images/*')
         .pipe(flatten())
-        .pipe(gulp.dest(folder + '/images/'));
+        .pipe(gulp.dest(buildFolder + '/images/'));
 });
 
 // Views task
 gulp.task('views', function() {
-    var folder = environmentSwitch();
-    // Get our index.html
-    gulp.src(sourceFolder + '/index.html')
-        // And put it in the build folder
-        .pipe(gulp.dest(folder + '/'));
-
-    // Any other view files from src/views
     gulp.src(sourceFolder + '/**/views/*')
         .pipe(flatten())
-        // Will be put in the build/views folder
-        .pipe(gulp.dest(folder + '/views/'));
+        // Will be put in the build/views buildFolder
+        .pipe(gulp.dest(buildFolder + '/views/'));
+    return gulp.src(sourceFolder + '/index.html')
+        // And put it in the build buildFolder
+        .pipe(gulp.dest(buildFolder + '/'));
+});
+
+gulp.task('minify', ['styles'], function() {
+    gulp.src(buildFolder + '/css/bundle.css')
+        .pipe(minifyCSS())
+        .pipe(rename('bundle.min.css'))
+        .pipe(gulp.dest(buildFolder + '/css'));
+});
+
+gulp.task('uglify', ['browserify'], function() {
+    gulp.src(buildFolder + '/js/bundle.js')
+        .pipe(uglify())
+        .pipe(rename('bundle.min.js'))
+        .pipe(gulp.dest(buildFolder + '/js'));
+});
+
+gulp.task('replaceForProd', ['views'], function() {
+    gulp.src(buildFolder + '/index.html')
+        .pipe(htmlreplace({
+            'css': 'css/bundle.min.css',
+            'js': 'js/bundle.min.js'
+        }))
+        .pipe(gulp.dest(buildFolder + '/'));
 });

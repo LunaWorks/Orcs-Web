@@ -1,14 +1,17 @@
 <!doctype html>
 <html lang="en" ng-app="myApp">
 <head>
-    <title>My awesome app</title>
+    <title>App skeleton</title>
     <link rel="stylesheet" href="css/bundle.css" />
 </head>
-<body ng-controller='WelcomeCtrl'>
-
+<body>
 <h1>AngularJs build with Gulp</h1>
 
-<p>{{testVar}}</p>
+<p ng-controller='WelcomeCtrl'>{{testVar}}</p>
+
+<div ng-controller="DataGridCtrl">
+    <div ng-include="'views/dataGrid.html'"></div>
+</div>
 
 <script src="js/bundle.js"></script>
 
