@@ -13,7 +13,8 @@ var gulp = require('gulp'),
     flatten = require('gulp-flatten'),
     uglify = require('gulp-uglify'),
     minifyCSS = require('gulp-minify-css'),
-    htmlreplace = require('gulp-html-replace');
+    htmlreplace = require('gulp-html-replace'),
+    imagemin = require('gulp-imagemin');
 
 var sourceFolder =  'src',
     devFolder = 'builds/dev',
@@ -68,6 +69,7 @@ gulp.task('browserify', function() {
 gulp.task('images', function() {
     gulp.src(sourceFolder + '/**/images/*')
         .pipe(flatten())
+        .pipe(imagemin())
         .pipe(gulp.dest(buildFolder + '/images/'));
 });
 
