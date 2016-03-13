@@ -1,6 +1,7 @@
 {
-  "name": "angular-gulp-browserify-livereload-boilerplate",
+  "name": "angular-gulp-base-project",
   "version": "0.0.1",
+  "licence": "MIT",
   "devDependencies": {
     "angular": "^1.5.0",
     "browserify": "~3.46.0",
@@ -15,6 +16,7 @@
     "gulp-embedlr": "~0.5.2",
     "gulp-flatten": "^0.2.0",
     "gulp-html-replace": "^1.5.5",
+    "gulp-imagemin": "^2.4.0",
     "gulp-jshint": "~1.5.5",
     "gulp-livereload": "~2.1.0",
     "gulp-minify-css": "^1.2.4",
