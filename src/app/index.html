@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en" ng-app="myApp">
+<head>
+    <title>App skeleton</title>
+    <!-- build:css -->
+    <link rel="stylesheet" href="css/bundle.css" />
+    <!-- endbuild -->
+</head>
+<body>
+<div id="splash-screen" data-ng-if="splash">
+    <style>
+        #splash-screen {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 10;
+            user-select: none;
+            background-color: dimgrey;
+        }
+        #splash-content {
+            width: 300px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 150px;
+            background-color: black;
+            padding: 10px 10px 10px 10px;
+        }
+    </style>
+    <div id="splash-content">
+        <h2>Gulp-Angular skeleton</h2>
+        <img src="images/LunaWorksLogo.png"/>
+        <strong>LunaWork</strong>
+    </div>
+</div>
+<h1>AngularJs build with Gulp</h1>
+
+<p ng-controller='WelcomeCtrl'>{{testVar}} <strong data-ng-if="splash">SPLASH</strong></p>
+
+<div ng-controller="DataGridCtrl">
+    <div ng-include="'views/dataGrid.html'"></div>
+</div>
+
+<script src="js/angular.min.js"></script>
+<!-- build:js -->
+<script src="js/bundle.js"></script>
+<!-- endbuild -->
+
+</body>
+</html>

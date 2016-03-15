@@ -16,7 +16,7 @@ var gulp = require('gulp'),
     htmlreplace = require('gulp-html-replace'),
     imagemin = require('gulp-imagemin');
 
-var sourceFolder =  'src',
+var sourceFolder =  'src/app',
     devFolder = 'builds/dev',
     prodFolder = 'builds/prod',
     buildFolder = devFolder;
@@ -54,7 +54,7 @@ gulp.task('styles', function() {
 // Browserify task
 gulp.task('browserify', function() {
     // Single point of entry (make sure not to src ALL your files, browserify will figure it out)
-    return gulp.src([sourceFolder + '/core/scripts/main.js'])
+    return gulp.src([sourceFolder + '/main.js'])
         .pipe(browserify({
             insertGlobals: true,
             debug: false
