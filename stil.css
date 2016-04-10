@@ -1,0 +1,38 @@
+body {
+    background-color: #d0e4fe;
+}
+
+h1{
+    box-shadow: 10px 100px 50px white;
+   text-align: center;
+    font-family:Matura MT Script Capitals;
+    color:darkblue;
+}
+table{   max-width: 500px;
+    border: 6px solid;
+    margin-left: 400px;
+}
+
+a:link, a:visited {
+    background-color: #86f4bb;
+    color: black;
+    padding: 5px 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-style: oblique;
+
+}
+
+
+a:hover, a:active {
+    background-color: white;
+}
+tr{
+    background-color: #86f4bb;
+
+}
+td{
+    padding: 0px 10px 0px 0px;
+}
+
