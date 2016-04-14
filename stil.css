@@ -4,18 +4,16 @@ body {
 
 h1{
     box-shadow: 10px 100px 50px white;
-   text-align: center;
-    font-family:Matura MT Script Capitals;
+    text-align: center;
     color:darkblue;
 }
-table{   max-width: 500px;
+table{  max-width: 500px;
     border: 6px solid;
-    margin-left: 400px;
+    margin-left: 430px;
 }
 
 a:link, a:visited {
-    background-color: #86f4bb;
-    color: black;
+    background-color: red;
     padding: 5px 5px;
     text-align: center;
     text-decoration: none;
@@ -33,6 +31,9 @@ tr{
 
 }
 td{
-    padding: 0px 10px 0px 0px;
+    padding:  10px;
 }
 
+.also{
+    text-align: left;
+}
