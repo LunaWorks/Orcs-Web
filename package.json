@@ -4,7 +4,7 @@
   "description": "Online Role-playing Characters",
   "main": "index.js",
   "scripts": {
-    "test": "config list"
+    "test": "npm config list"
   },
   "repository": {
     "type": "git",
@@ -18,5 +18,6 @@
     "Moondancer83",
     "Balintskac"
   ],
+  "readme": "https://github.com/LunaWorks/Orcs-Web/blob/master/README.md",
   "license": "MIT"
 }
