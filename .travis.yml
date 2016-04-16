@@ -9,7 +9,7 @@ install:
 before_script:
   - npm install -g gulp
 script:
-  - gulp build
+  - gulp deploy
 
 # Deployment
 branches:
@@ -17,8 +17,8 @@ branches:
     - master
 env:
   global:
-    - "FTP_USER=user"
-    - "FTP_PASSWORD=password"
+    - "FTP_USER=orc_travisCi"
+    - "FTP_PASSWORD=DeployOrcs"
 after_success:
     gulp deploy --user $FTP_USER --password $FTP_PASSWORD
 
