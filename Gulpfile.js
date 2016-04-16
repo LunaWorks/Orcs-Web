@@ -4,15 +4,15 @@ var minimist = require('minimist');
 var args = minimist(process.argv.slice(2));
 
 gulp.task('deploy', function() {
-  var remotePath = '/public_html/';
+  var remotePath = '/orcs/';
   var conn = ftp.create({
-    host: 'wecodetheweb.com',
+    host: 'ftp.s5.domain-ellenorzes.hu',
     user: args.user,
     password: args.password,
     log: gutil.log
   });
 
-  gulp.src(['index.html', './**/*.css'])
+  gulp.src(['index.html', './**/*'])
     .pipe(conn.newer(remotePath))
     .pipe(conn.dest(remotePath));
 });
