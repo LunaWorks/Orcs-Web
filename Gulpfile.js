@@ -24,6 +24,7 @@ gulp.task('deploy', function() {
     gulp.src(['./src/*', './src/**/*'])
       .pipe(debug())
       .pipe(conn.newer(remotePath))
-      .pipe(conn.dest(remotePath));
+      .pipe(conn.dest(remotePath))
+      .pipe(console.log('Deployed successfully'));
   }
 });
