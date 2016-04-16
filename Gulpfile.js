@@ -11,8 +11,10 @@ gulp.task('listFiles', function() {
 });
 
 gulp.task('deploy', function() {
-  console.log('Is pull-request: ' + args.request);
-  if (!args.request) {
+  var isPull = !!args.request;
+  console.log('Is pull-request: ' + isPull);
+  console.log('Triggering deployment: ' + !isPull); 
+  if (!isPull) {
     console.log('Deploying...');
     var remotePath = './';
     var conn = ftp.create({
@@ -26,5 +28,7 @@ gulp.task('deploy', function() {
       .pipe(debug())
       .pipe(conn.newer(remotePath))
       .pipe(conn.dest(remotePath));
+  } else {
+    console.log ('Deployment skipped.');
   }
 });
