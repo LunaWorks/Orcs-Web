@@ -1,5 +1,7 @@
 # Orcs
 Online Role-playing Character Sheets
+
+[![Build Status](https://travis-ci.org/LunaWorks/Orcs-Web.svg?branch=master)](https://travis-ci.org/LunaWorks/Orcs-Web)
 ### Goals
 The application is going to support D&D as first role-playing game.
 Make Character creation and management more easier is the main goal.
