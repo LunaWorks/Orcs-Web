@@ -18,5 +18,4 @@ env:
     - "FTP_USER=orc_travisCi"
     - "FTP_PASSWORD=DeployOrcs"
 after_success:
-    gulp deploy --user $FTP_USER --password $FTP_PASSWORD
-
+    gulp deploy --user $FTP_USER --password $FTP_PASSWORD --request $TRAVIS_PULL_REQUEST

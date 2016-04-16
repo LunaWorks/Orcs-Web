@@ -11,16 +11,20 @@ gulp.task('listFiles', function() {
 });
 
 gulp.task('deploy', function() {
-  var remotePath = './';
-  var conn = ftp.create({
-    host: 'ftp.s5.domain-ellenorzes.hu',
-    user: args.user,
-    password: args.password,
-    log: gutil.log
-  });
+  console.log('Is pull-request: ' + args.request);
+  if (!args.request) {
+    var remotePath = './';
+    var conn = ftp.create({
+      host: 'ftp.s5.domain-ellenorzes.hu',
+      user: args.user,
+      password: args.password,
+      log: gutil.log
+    });
 
-  gulp.src(['./src/*', './src/**/*'])
+    gulp.src(['./src/*', './src/**/*'])
       .pipe(debug())
-    .pipe(conn.newer(remotePath))
-    .pipe(conn.dest(remotePath));
+      .pipe(conn.newer(remotePath))
+      .pipe(conn.dest(remotePath))
+      .pipe(console.log('Deployed successfully'));
+  }
 });
