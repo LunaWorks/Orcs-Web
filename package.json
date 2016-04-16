@@ -1,0 +1,22 @@
+{
+  "name": "orcs-web",
+  "version": "0.0.1",
+  "description": "Online Role-playing Characters",
+  "main": "index.js",
+  "scripts": {
+    "test": "config list"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/LunaWorks/Orcs-Web/"
+  },
+  "keywords": [
+    "rpg"
+  ],
+  "author": "LunaWorks",
+  "contributors" [
+    "Moondancer83",
+    "Balintskac"
+  ],
+  "license": "MIT"
+}
