@@ -4,8 +4,11 @@ var gutil = require('gulp-util');
 var minimist = require('minimist');
 var args = minimist(process.argv.slice(2));
 
+console.log(args.user);
+console.log(args.password);
+
 gulp.task('deploy', function() {
-  var remotePath = '/srv/users/dam/orcs/';
+  var remotePath = './';
   var conn = ftp.create({
     host: 'ftp.s5.domain-ellenorzes.hu',
     user: args.user,
