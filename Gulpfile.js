@@ -13,6 +13,7 @@ gulp.task('listFiles', function() {
 gulp.task('deploy', function() {
   console.log('Is pull-request: ' + args.request);
   if (!args.request) {
+    console.log('Deploying...');
     var remotePath = './';
     var conn = ftp.create({
       host: 'ftp.s5.domain-ellenorzes.hu',
@@ -24,7 +25,6 @@ gulp.task('deploy', function() {
     gulp.src(['./src/*', './src/**/*'])
       .pipe(debug())
       .pipe(conn.newer(remotePath))
-      .pipe(conn.dest(remotePath))
-      .pipe(console.log('Deployed successfully'));
+      .pipe(conn.dest(remotePath));
   }
 });
