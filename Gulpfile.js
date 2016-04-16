@@ -1,8 +1,14 @@
 var gulp = require('gulp');
 var ftp = require('vinyl-ftp');
 var gutil = require('gulp-util');
+var debug = require('gulp-debug');
 var minimist = require('minimist');
 var args = minimist(process.argv.slice(2));
+
+gulp.task('listFiles', function() {
+    gulp.src(['./src/*', './src/**/*'])
+        .pipe(debug());
+});
 
 gulp.task('deploy', function() {
   var remotePath = './';
@@ -13,7 +19,8 @@ gulp.task('deploy', function() {
     log: gutil.log
   });
 
-  gulp.src(['src/*', 'src/**/*'])
+  gulp.src(['./src/*', './src/**/*'])
+      .pipe(debug())
     .pipe(conn.newer(remotePath))
     .pipe(conn.dest(remotePath));
 });
