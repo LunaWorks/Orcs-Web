@@ -11,7 +11,7 @@ gulp.task('listFiles', function() {
 });
 
 gulp.task('deploy', function() {
-  var isPull = args.request !== false;
+  var isPull = args.request !== 'false';
   console.log(args.request);
   console.log('Is pull-request: ' + isPull);
   console.log('Triggering deployment: ' + !isPull); 
