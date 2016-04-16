@@ -1,0 +1,11 @@
+# Common
+language: node_js
+
+# Build
+node_js:
+ - "4"
+
+# Deployment
+branches:
+  only:
+    - master
