@@ -4,8 +4,21 @@ language: node_js
 # Build
 node_js:
  - "4"
+install:
+  - npm install
+before_script:
+  - npm install -g gulp
+script:
+  - gulp build
 
 # Deployment
 branches:
   only:
     - master
+env:
+  global:
+    - "FTP_USER=user"
+    - "FTP_PASSWORD=password"
+after_success:
+    gulp deploy --user $FTP_USER --password $FTP_PASSWORD
+
