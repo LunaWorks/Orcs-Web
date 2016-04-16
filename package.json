@@ -21,6 +21,7 @@
   "readme": "https://github.com/LunaWorks/Orcs-Web/blob/master/README.md",
   "license": "MIT",
   "devDependencies": {
+    "gulp": "^3.9.1",
     "gulp-util": "^3.0.7",
     "minimist": "^1.2.0",
     "vinyl-ftp": "^0.4.5"
