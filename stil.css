@@ -13,7 +13,7 @@ table{  max-width: 500px;
 }
 
 a:link, a:visited {
-    background-color: red;
+    background-color: darkgreen;
     padding: 5px 5px;
     text-align: center;
     text-decoration: none;
@@ -31,9 +31,13 @@ tr{
 
 }
 td{
-    padding:  10px;
+    padding: 10px;
 }
 
 .also{
     text-align: left;
+}
+
+li {
+    color: red;
 }

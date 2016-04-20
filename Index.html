@@ -5,22 +5,21 @@
     <title>Projekt</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
     <style>
         body {
             background-color: #d0e4fe;
         }
 
-        h1{
-            box-shadow: 10px 100px 50px white;
+        .header {
+            box-shadow: 10px 70px 50px black;
             text-align: center;
-            font-family:Matura MT Script Capitals;
-            color:darkblue;
-        }
-        table{  max-width: 500px;
-            border: 6px solid;
-            margin-left: 430px;
+            font-family: MT Script;
+            color: darkblue;
+            background-image: url("https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSQp_QgFar0qTpVHqP-IA60cxFGHZFiV0QV7r7vNFZbJHFlEP-_");
+            padding: 1px;
+            height: 90px;
+
         }
 
         a:link, a:visited {
@@ -33,32 +32,26 @@
 
         }
 
-
         a:hover, a:active {
             background-color: white;
         }
-        tr{
-            background-color: #86f4bb;
 
-        }
-        td{
-            padding:10px ;
+        .Footer {
+            bottom: 4px;
+            position: fixed;
         }
 
-        .also{
-            text-align: left;
-        }
-
-       li{
-            color:red;
-        }
 
 
     </style>
 
 </head>
 <body>
-<h1>Projekt</h1>
+
+<div id class="header">
+    <h1>Characters</h1>
+</div>
+
 <nav class="navbar navbar-inverse">
     <div class="container-fluid">
         <div class="navbar-header">
@@ -72,7 +65,7 @@
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
                 <li><a href="#">Characters</a></li>
-                <li><a href="#">Results</a></li>
+                <li><a href="#">My characters page</a></li>
                 <li><a href="#">options</a></li>
                 <li><a href="#">Play</a></li>
             </ul>
@@ -82,7 +75,7 @@
         </div>
     </div>
 </nav>
-    <div class="also">
+<div class="Footer">
         <p>Created by: Bálint Rápolthy</p>
     </div>
 </body>
