@@ -33,9 +33,10 @@
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
                 <li><a href="#">Home</a></li>
-                <li><a href="#">Characters</a></li>
+                <li><a href="#"> <button>Characters</button></a></li>
                 <li><a href="#">About</a></li>
                 <li><a href="#">Play</a></li>
+            </ul>
                 <li>
                     <div class="dropdown">
                         <div id="btn btn-default dropdown-toggle" data-toggle="dropdown"><a href="#">Tutorials</a>
@@ -66,7 +67,19 @@
     <div class="jumbotron">
         <p>The application is going to support D&D as first role-playing game. Make Character creation and management more easier is the main goal.
             Character creation by the free roles of the game. Character management by users. Share character sheets. </p>
+        <div id="div1"></div>
+        <script>
+            $(document).ready(function(){
+                $("button").click(function(){
+                    $.ajax({url: "demo.characters.txt", success: function(result){
+                        $("#div1").html(result);
+                    }});
+                });
+            });
+        </script>
+
     </div>
+
 </div>
 <div id class="footer">
     <p>2016. Created by LunaWorks | Version: 0.2.0-SNAPSHOT</p>
