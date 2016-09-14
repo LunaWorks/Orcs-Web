@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>ORCs - Online Role-playing Characters</title>
+    <title>List of characters</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <link rel="stylesheet" href="Stil.css">
@@ -49,7 +49,6 @@
                             <li><a href="#">Line 3</a></li>
                             <li class="divider"></li>
                             <li class="dropdown-header">MENU #2</li>
-
                             <li><a href="#">About Us</a></li>
                         </ul>
                     </div>
@@ -68,19 +67,6 @@
     <div class="jumbotron">
         <p>The application is going to support D&D as first role-playing game. Make Character creation and management more easier is the main goal.
             Character creation by the free roles of the game. Character management by users. Share character sheets. </p>
-        <div id="div1"></div>
-        <script>
-            $(document).ready(function(){
-                $("button").click(function(){
-                    $.ajax({url: "characters.json.txt", success: function(result){
-                        $("#div1").html(result);
-                        var x = result;
-                        console.log(x.name);
-                    }});
-                });
-            });
-        </script>
-
     </div>
 
 </div>
