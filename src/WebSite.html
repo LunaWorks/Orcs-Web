@@ -72,8 +72,10 @@
         <script>
             $(document).ready(function(){
                 $("button").click(function(){
-                    $.ajax({url: "demo.characters.txt", success: function(result){
+                    $.ajax({url: "characters.json.txt", success: function(result){
                         $("#div1").html(result);
+                        var x = result;
+                        console.log(x.name);
                     }});
                 });
             });
