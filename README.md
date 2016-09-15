@@ -3,7 +3,7 @@ Online Role-playing Character Sheets
 
 [![Build Status](https://travis-ci.org/LunaWorks/Orcs-Web.svg?branch=master)](https://travis-ci.org/LunaWorks/Orcs-Web)
 
-Deployed to [ORCs.kalee.hu](http://orcs.kalee.hu/)  
+Deployed to [ORCs.kalee.hu](http://orcs.dev.kalee.hu/)  
 ### Goals
 The application is going to support D&D as first role-playing game.
 Make Character creation and management more easier is the main goal.
