@@ -5,12 +5,16 @@
     <title>List of characters</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-    <link rel="stylesheet" href="Stil.css">
-
+    <link rel="stylesheet" href="Basic.css">
 
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="characterList.js">
+        $(document).ready(function(){
+
+
+        });
+    </script>
 
 </head>
 <body>
@@ -26,14 +30,14 @@
             <ul class="nav navbar-nav">
 
                 <div class="navbar-brand">
-                    ORCs - Online Role-playing Characters
+                  playing Characters
                 </div>
             </ul>
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
                 <li><a href="#">Home</a></li>
-                <li><a href="#"> <button>Characters</button></a></li>
+                <li><a href="#">Characters</a></li>
                 <li><a href="#">About</a></li>
                 <li><a href="#">Play</a></li>
             </ul>
@@ -68,13 +72,13 @@
         <p>The application is going to support D&D as first role-playing game. Make Character creation and management more easier is the main goal.
             Character creation by the free roles of the game. Character management by users. Share character sheets. </p>
     </div>
-   <button type="button" name="characters" value="on-click=console.log('characters',showCharacters())">Click on it!</button>
-    <script src="characters.js">
-    </script>
 
 </div>
+<button type="button" name="characters" on-click="console.log('characters',showCharacters())">Click on it!</button>
+
 <div id class="footer">
     <p>2016. Created by LunaWorks | Version: 0.2.0-SNAPSHOT</p>
 </div>
+
 </body>
 </html>
