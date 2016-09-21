@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Created by .ignore support plugin (hsz.mobi)
 ### Eclipse template
 
@@ -104,3 +105,9 @@ com_crashlytics_export_strings.xml
 crashlytics.properties
 crashlytics-build.properties
 fabric.properties
+=======
+.DS_Store
+node_modules/*
+build/*
+.idea/*
+>>>>>>> remotes/origin/gulp
