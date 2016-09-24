@@ -1,15 +1,9 @@
-/**
- * Single entry point of Orcs-Web
- */
-
 'use strict';
 
-var angular = require('angular');
+var angular = require('angular'); // That's right! We can just require angular as if we were in node
+
+var WelcomeCtrl = require('../../welcome/scripts/WelcomeCtrl'); // We can use our WelcomeCtrl.js as a module. Rainbows.
 
 var app = angular.module('myApp', []);
 
-var WelcomeCtrl = require('../../welcome/scripts/WelcomeCtrl');
-var DataGridCtrl = require('../../dataGrid/scripts/DataGridCtrl');
-
 app.controller('WelcomeCtrl', ['$scope', WelcomeCtrl]);
-app.controller('DataGridCtrl', ['$scope', DataGridCtrl]);
