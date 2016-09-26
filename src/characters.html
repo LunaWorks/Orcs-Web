@@ -1,85 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>List of characters</title>
+    <title>ORCs</title>
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-    <link rel="stylesheet" href="basic.css">
-
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="characterList.js">
-        $(document).ready(function(){
-            $("button").click(function(){
-                $("#div1").load("characterList.js");
-            });
-        });
-    </script>
-
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
 
 <nav class="navbar navbar-inverse">
     <div class="container-fluid">
         <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <ul class="nav navbar-nav">
-
-
-                  <li>playing Characters</li>
-
-            </ul>
-        </div>
-        <div class="collapse navbar-collapse" id="myNavbar">
-            <ul class="nav navbar-nav">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Characters</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Play</a></li>
-            </ul>
-
-                    <div class="dropdown">
-                        <div id="btn btn-default dropdown-toggle" data-toggle="dropdown"><a href="#">Tutorials</a>
-                            <span class="caret"></span>
-                        </div>
-                        <ul class="dropdown-menu">
-                            <li class="dropdown-header">MENU #1</li>
-                            <li><a href="#">Line 1</a></li>
-                            <li><a href="#">Line 2</a></li>
-                            <li><a href="#">Line 3</a></li>
-                            <li class="divider"></li>
-                            <li class="dropdown-header">MENU #2</li>
-                            <li><a href="#">About Us</a></li>
-                        </ul>
-                    </div>
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-                <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> sign up</a></li>
-            </ul>
-        </div>
+            <a class="navbar-brand" href="#">ORCs
+        <ul class="nav navbar-nav">
+            <li class="active"><a href="index.html">Home</a></li>
+            <li><a href="characters.html">About</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
     </div>
 </nav>
+
+
 <div class="container">
-    <h2>Goals</h2>
-
-    <div class="jumbotron">
-        <p>The application is going to support D&D as first role-playing game. Make Character creation and management more easier is the main goal.
-            Character creation by the free roles of the game. Character management by users. Share character sheets. </p>
+    <div class="starter-template">
+        <h1>Online Role-playing Character sheets</h1>
+        <p class="lead" align="Justify">The application is going to support D&D as first role-playing game. Make Character creation and management more easier is the main goal. Character creation by the free roles of the game.Character management by users. Share character sheets.</p>
     </div>
-
-</div>
-<!-- <button type="button" name="characters" on-click="console.log('characters',showCharacters())">Click on it!</button> -->
-
-<div id ="div1"><h2></h2></div>
-<button>Karakterek</button>
-<div id class="footer">
-    <p>2016. Created by LunaWorks | Version: 0.2.0-SNAPSHOT</p>
-</div>
-
 </body>
 </html>
+
