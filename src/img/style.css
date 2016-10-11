@@ -1,0 +1,57 @@
+@charset "utf-8";
+/* CSS Document */
+	.modal-content{color: black !important; background-color: lightgrey;}
+	
+         body {
+            padding-top: 40px;
+            padding-bottom: 40px;
+            background-color: black;
+			color: white;
+			text-align: center;
+         }
+		 .error[for="user_email"], .error[for="password"]{
+			 color: white;
+			 background-color: red;
+		 }
+		 .error-frame{
+			 max-width: 100%;
+		 }
+		 .error{
+			 max-width: 90%;
+		 display:inline-block;
+		 text-align: center;
+			border: 10px;
+		 }
+		 .header{
+			text-align: center;
+			}
+		 .form-signin {
+   // max-width: 290px;
+		 }
+		 .form{
+		 max-width: 300px;
+		 display:inline-block;
+		 text-align: center;
+		 }
+		 h1{
+		 font-weight: bold;
+		 font-family: "Arial Black", Gadget, sans-serif	
+		 }
+		.btn-login{ max-height: 45px; }
+		.loading-gif{max-height: 30px;}
+		table, th, td 
+		{
+			color: white;
+			border: 1px solid white;
+		}
+
+		th, td 
+		{
+			padding: 10px;
+		}
+		th
+		{
+		//	font-size: 16pt;
+		}
+		td{text-align: left;}
+		 

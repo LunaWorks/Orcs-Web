@@ -42,8 +42,8 @@ $('document').ready(function()
       {      
      if(response=="ok"){
          
-      $("#btn-login").html('<img src="btn-ajax-loader.gif" /> &nbsp; Signing In ...');
-      setTimeout(' window.location.href = "home.php"; ',4000);
+      $("#btn-login").html('<img src="img/btn-ajax-loader.gif" class="loading-gif" /> &nbsp; Signing In ...');
+      setTimeout(' window.location.href = "landing.php"; ',4000);
      }
      else{
          
